@@ -43,6 +43,17 @@ Playlist.prototype.listSongs = function() {
   console.log("Songs:", this.songs.join(", "));
 };
 
+// This method plays the last song in the playlist.
+Playlist.prototype.playLast = function() {
+  if (this.songs.length > 0) {
+    // Sets the current song to the last song in the playlist.
+    this.currentSong = this.songs[this.songs.length - 1];
+    console.log("Now playing:", this.currentSong);
+  } else {
+    console.log("No songs in the playlist.");
+  }
+};
+
 // This creates a new Playlist instance.
 let myMix = new Playlist("My Chill Mix");
 
@@ -53,3 +64,4 @@ myMix.addSong("Evening Jazz");
 myMix.playFirst();
 myMix.skipSong();
 myMix.listSongs();
+myMix.playLast();
